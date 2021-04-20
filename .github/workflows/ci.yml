@@ -15,8 +15,6 @@ jobs:
     - run: npm install -g @angular/cli > /dev/null
     - run: ng build --prod --output-path=dist --base-href="https://compactmods.github.io/site/"
     - name: Publish generated content to GitHub Pages
-      uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
+      uses: crazy-max/ghaction-github-pages@v2.3.0
       with:
-          dir: dist
-          branch: gh-pages
-          token: ${{ secrets.GITHUB_TOKEN }}
+          build_dir: dist
