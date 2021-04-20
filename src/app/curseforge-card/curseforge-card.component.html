@@ -1,0 +1,33 @@
+<mat-card class="example-card">
+    <ng-template *ngIf="loaded; then done; else loading"></ng-template>
+    <ng-template #done>
+        <!-- <mat-card-header>
+            <mat-card-title>Compact Crafting</mat-card-title>
+            <mat-card-subtitle>Crafting just got smaller.</mat-card-subtitle>
+        </mat-card-header> -->
+        <mat-card-content>
+            <img [src]="availableForSvg" />
+            &nbsp;
+            <img [src]="downloadSvg" />
+            &nbsp;
+            <!-- <img src="https://github.com/CompactMods/CompactCrafting/actions/workflows/tagged-release.yml/badge.svg" /> -->
+        </mat-card-content>
+        <!-- <img mat-card-image src="/assets/cards/crafting.png" alt="Crafting a Chicken"> -->
+        <mat-card-actions>
+            <button mat-flat-button color="accent">
+                <mat-icon>download</mat-icon>
+                Curseforge
+            </button>
+            <button mat-stroked-button>
+                <fa-icon [icon]="faGithub"></fa-icon>
+                Github
+            </button>
+        </mat-card-actions>
+    </ng-template>
+
+    <ng-template #loading>
+        <mat-card-content>
+            <mat-progress-bar mode="buffer"></mat-progress-bar>
+        </mat-card-content>
+    </ng-template>
+</mat-card>
